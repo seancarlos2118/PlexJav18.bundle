@@ -29,7 +29,7 @@ except ImportError:
 
 SERVICES = [SiteR18Dev(), SiteJavGuru(), SiteJavDB(), SiteAVWiki(), Site141Jav(), SiteOneJav()]
 
-CURRENT_UPDATE = "24/03/18"
+CURRENT_UPDATE = "20261123"
 
 
 def title_id_to_r18_id(id):
@@ -73,7 +73,12 @@ class Jav18Agent(Agent.Movies):
     def search(self, results, media, lang):
         Log('******* MEDIA SEARCH ******')
         Log("        Version: " + CURRENT_UPDATE)
-        release_id = media.name.strip().replace(" ", "-")
+        release_id = ""
+        if media.filename is not None:
+            release_id = media.filename
+        else:
+            release_id = media.name
+        release_id = re.findall(r"\w+-\w+|$", os.path.split(urlparse.unquote(release_id))[1])[0]
         if not "-" in release_id and media.filename is not None:
             path, release_id = os.path.split(unencode_file_name(media.filename))
             if "." in release_id:
@@ -104,6 +109,7 @@ class Jav18Agent(Agent.Movies):
         Log("Result: " + str(metadata.id))
         searcher_tag, metadata.id = metadata.id.split("#")
         Log("ID: " + str(metadata.id))
+        Log("media.title: " + str(media.title))
 
         id_gatherers = [s for s in SERVICES if s.can_get_site_ids()]
         ids = None
@@ -177,7 +183,7 @@ class Jav18Agent(Agent.Movies):
         front_cover_low_rez = results.get_front_cover_low_rez()
         full_cover_high_rez = results.get_full_cover_high_rez()
 
-        header = {'Referer': 'http://www.google.com'}
+        header = HDR
 
         poster_set = False
         image_cropper_failed = False

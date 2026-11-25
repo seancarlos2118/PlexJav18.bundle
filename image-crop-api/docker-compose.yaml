@@ -1,0 +1,9 @@
+services:
+  image-crop-api:
+    build: .
+    container_name: image-crop-api
+    ports:
+      - "3133:3133"
+    env_file:
+      - .env
+    restart: unless-stopped
