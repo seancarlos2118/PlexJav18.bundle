@@ -10,7 +10,11 @@ A lightweight, localhost-hosted Node.js API built with **Express** and **Sharp**
    ```
 2. Run the installer for your OS:
    - **Windows:** Double-click `install-windows.bat`
-   - **macOS / Linux:** Run `./install-unix.sh`
+   - **macOS / Linux:** Run
+   ```bash
+   chmod +x install-unix.sh
+   ./install-unix.sh
+   ```
 
 Both scripts let you choose between **Docker** (builds locally with auto-restart) or **Native Node.js + PM2** (auto-starts on system boot).
 
