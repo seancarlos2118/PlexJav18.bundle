@@ -19,7 +19,7 @@ For **Windows**, run the file install-windows.bat.
 ```
 install-windows.bat
 ```
-<img width="1103" height="639" alt="Untitled12345678" src="https://github.com/user-attachments/assets/0cb3c511-68ec-42ac-9865-50f521ef62bd" />
+<img width="1103" height="639" alt="Untitled12345678" src="https://github.com/user-attachments/assets/17614819-19b2-4b08-8565-5beed4649c8c" />
 
 For **Unix** and **Linux**, run the file install-unix.sh.
 ```
@@ -78,7 +78,7 @@ Example: (totally safe for work)
 ```
 http://localhost:3133/crop?url=https://pics.dmm.com/mono/movie/n_641enfd5130r/n_641enfd5130rpl.jpg
 ```
-<img width="1244" height="805" alt="Untitled123456781234" src="https://github.com/user-attachments/assets/9b92236c-3576-44fa-a30a-0590112329d3" />
+<img width="1244" height="805" alt="Untitled123456781234" src="https://github.com/user-attachments/assets/03357586-ef39-48a1-a4b7-79bb6a95c0c4" />
 
 If not working, make sure to install as in **Steps 1 and 3**.
 
